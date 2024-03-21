@@ -16,6 +16,17 @@
     </pre>
 
     <button id="btn">클릭해보세요</button>
+
+    <script>
+        const $button = document.getElementById('btn');
+
+        const handleClick = () => alert('클릭했음~');
+
+        $button.addEventListener('click', handleClick);
+
+        $button.removeEventListener('click', handleClick);
+    
+    </script>
   
     
     <pre>
@@ -24,6 +35,19 @@
     </pre>
 
     <button id="btn2">더블클릭해보세요</button>
+
+    <script>
+        const $button2 = document.getElementById('btn2');
+
+        const handlerDbClick = () => alert('더블클릭 함!!!');
+
+        $button2.ondblclick = handlerDbClick;
+
+        // 이벤트 제거되지 않음
+        $button2.removeEventListener('dblclick', handlerDbClick);
+
+        $button2.ondblclick = null;
+    </script>
     
 
 </body>

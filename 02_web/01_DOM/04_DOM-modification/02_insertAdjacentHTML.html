@@ -23,6 +23,24 @@
         insertAdjacentHTML 메소드 사용 테스트
     </div>
 
+    <script>
+
+        /*
+            beforbegin : 대상 요소의 바로 앞에, 즉 형제 요소로 새로운 요소 삽입
+            afterbegin : 대상 요소의 내부에서, 가장 첫 번째 자식 요소로 새로운 요소를 삽입
+            beforeend : 대상 요소의 내부에서, 가장 마지막 자식 요소로 새로운 요소 삽입
+            afterend : 대상 요소의 바로 뒤에, 즉 형제 요소로 새로운 요소 삽입 
+        */  
+        const $area = document.getElementById('area');
+
+        $area.insertAdjacentHTML('beforebegin', '<h1>beforbegin테스트</h1>');
+        $area.insertAdjacentHTML('afterbegin', '<h1>afterbegin테스트</h1>');
+        $area.insertAdjacentHTML('beforeend', '<h1>beforeend테스트</h1>');
+        $area.insertAdjacentHTML('afterend', '<h1>afterend테스트</h1>');
+
+
+    </script>
+
    
 </body>
 </html>

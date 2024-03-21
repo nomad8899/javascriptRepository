@@ -16,6 +16,19 @@
     </pre>
     <div style="color: white;">AREA</div>
 
+    <script>
+        const $area = document.querySelector('div');
+
+        console.log($area.style);
+
+        $area.style.width = '100px';
+        $area.style.height = '100px';
+
+        $area.style.backgroundColor = 'lightgray';  // 마침표 표기법
+        $area.style['background-color'] = 'red';    // 대괄호 표기법
+
+    </script>
+
    
 </body>
 </html>

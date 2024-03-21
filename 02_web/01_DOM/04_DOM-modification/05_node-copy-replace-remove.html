@@ -22,6 +22,20 @@
         <li>li 영역</li>
     </ul>
 
+    <script>
+        const $ul = document.querySelector(".copy");
+        const $li = $ul.firstElementChild;
+
+        // $li 얕은 복사 : 텍스트 노드 없는 사본
+        const $shallowClone = $li.cloneNode(false);
+
+        // $li 깊은 복사 : li, 텍스트 노드가 있는 사본
+        const $deepClone = $li.cloneNode(true);
+
+        $ul.appendChild($shallowClone);
+        $ul.appendChild($deepClone);
+    </script>
+
    
     <h3>노드 교체</h3>
     <pre>
@@ -35,6 +49,15 @@
         <li>사이다</li>
     </ul>
 
+    <script>
+        const $drink = document.getElementById('drink');
+        const $coffee = $drink.firstElementChild;
+
+        const $newChild = document.createElement('li');
+        $newChild.textContent = '콜라';
+
+        $drink.replaceChild($newChild, $coffee);
+    </script>
     
 
     <h3>노드 삭제</h3>
@@ -47,6 +70,12 @@
         <li>파스타</li>
         <li>피자</li>
     </ul>
+
+    <script>
+        const $food = document.getElementById('food');
+
+        $food.removeChild($food.lastElementChild);
+    </script>
 
   
 </body>

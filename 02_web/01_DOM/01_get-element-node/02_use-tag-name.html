@@ -24,11 +24,10 @@
         <li>콜라</li>
         <li>우유</li>
     </ul>
-
     <script>
-        // DOM 전체에서 해당 태그명을 가진 요소를 모두 탐색하여 반환
+        //DOM 전체에서 해당 태그명을 가진 요소를 모두 탐색하여 반환
         const $lists = document.getElementsByTagName("li");
-        console.log($lists);        //HTMLCollection : 유사 배열 객체
+        console.log($lists);        // HTMLCollection : 유사 배열 객체
 
         let changeColor = 0;
         for(let i = 0; i < $lists.length; i++) {
@@ -43,10 +42,10 @@
         const $drink = document.getElementById('drink');
         const $listFromDrink = $drink.getElementsByTagName('li');
         console.log($listFromDrink);
-        
-        Array.from($listFromDrink).forEach(list => list.style.color = 'blue')
 
-        // 인수로 준 태그의 요소가 존재하지 않으면
+        Array.from($listFromDrink).forEach(list => list.style.color = 'blue');
+
+        // 인수로 준 태그의 요소가 존재하지 않으면 
         // 빈 HTMLCollection 객체 반환
         const $noElem = $drink.getElementsByTagName('a');
         console.log($noElem);

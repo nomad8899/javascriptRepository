@@ -24,28 +24,27 @@
     <div class="area">
         <p>second</p>
     </div>
+   <script>
 
-    <script>
+    //Document.prototype.querySelector
+    //DOM 전체에서 해당 css 선택자의 값을 노드 중 첫 번째 요소 노드만 탐색하여 반환
+    const $area = document.querySelector('.area')
+    console.log($area);
 
-        // Document.prototype.querySelector
-        // DOM 전체에서 해당 css 선택자의 값을 노드 중 첫 번재 요소 노드만 탐색하여 반환
-        const $area = document.querySelector('.area')
-        console.log($area);
+    $area.style.backgroundColor = 'yellow';
 
-        $area.style.backgroundColor = 'yellow';
+    //Element.prototype.querySelector
+    //해당 엘리먼트의 자식 노드 중 인수로 넘겨준 css선택자의 값의 첫 번째 요소 노드만 반환
+    const $first = $area.querySelector('p')
+    console.log($first);
 
-        // Element.prototype.querySelector
-        // 해당 엘리먼트 자식 노드 중 인수로 넘겨준 css선택자의 값의 첫 번째 요소 노드만 반환
-        const $first = $area.querySelector('p')
-        console.log($first);
+    $first.style.color = 'white';
 
-        $first.style.color = 'white';
+    // 만족시키는 요소 노드가 존재하지 않는 경우 null반환
+    const $noElem = document.querySelector('#noElem');
+    console.log($noElem);
+   </script>
 
-        // 만족시키는 요소 노드가 존재하지 않는 경우 null반환
-        const $noElem = document.querySelector('#noElem');
-        console.log($noElem);
-    </script>
-   
     <pre>
     <b>Document.prototype/Element.prototype.querySelectorAll 메서드는 인수로 전달한 CSS 선택자를 만족시키는 모든 요소 노드를 탐색하여 반환한다.</b>
     여러 개의 요소 노드 객체를 갖는 DOM 컬렉션 객체인 NodeList 객체를 반환한다.
@@ -59,17 +58,17 @@
     </ul>
     <script>
 
-        // DOM 전체에서 해당 css 선택자의 값을 모두 NodeList로 반환
+        //DOM 전체에서 해당 css 선택자의 값을 모두 NodeList로 반환
         const $foodList = document.querySelectorAll('ul > li');
         console.log($foodList);
 
         $foodList.forEach(food => food.style.color = 'white');
 
-        // 인수로 넘겨준 css선택자를 만족시키는 요소 노드가 존재하지 않으면 빈 Nodelist반환
-        const $noElemList = document.querySelectorAll('#noElemList');
+
+        //인수로 넘겨준 css선택자를 만족시키는 요소 노드가 존재하지 않으면 빈 NodeList반환
+        const $noElemList = document.querySelectorAll('#noElemList')
         console.log($noElemList);
     </script>
-
     
 </body>
 </html>
